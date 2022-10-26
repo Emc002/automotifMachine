@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Ticket</title>
+  <link href="CSS/style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <style>
+    #number {
+      margin: 0;
+      padding: 6rem 4rem;
+      margin-left: 3rem;
+      font-size: 5rem;
+      font-weight: 700;
+      
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="ticket container-fluid">
+    <div class="entry">
+
+
+      <div class="row">
+        <div class="col-8">
+          <h1 style="margin-left:3rem;">Booking Ticket Automachine</h1>
+          <hr style="border: 1rem solid;border-color:rgb(62, 245, 255) ; ">
+          <div id="dataOne" style="margin-left: 2rem;"></div>
+          <div id="dataTwo" style="margin-left: 2rem;"></div>
+          <div id="dataThree" style="margin-left: 2rem;"></div>
+          <div id="dataFour" style="margin-left: 2rem;"></div>
+          <div id="dataFive" style="margin-left: 2rem;"></div>
+          <button id="btnPrint" class="hidden-print btn btn-dark">Print</button>
+        </div>
+
+        <div class="col-4">
+          <div id="number" style="margin-left: 2rem;"></div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+  <script>
+    var noUrut = Math.floor(Math.random() * 100) + 1;
+    const json = localStorage.getItem('form');
+    const obj = JSON.parse(json);
+    let Nama = obj['First Nama'];
+    let phone = obj['Phone Number'];
+    let email = obj['E-Mail']
+    let dropOff = obj['dateDropoff']
+    let pickup = obj['datepickup']
+
+    document.getElementById('dataOne').innerHTML = "NAMA   :" + Nama;
+
+    document.getElementById('dataTwo').innerHTML = "PHONE  :" + phone;
+
+    document.getElementById('dataThree').innerHTML = "E-MAIL:" + email;
+
+    document.getElementById('dataFour').innerHTML = "DROP OFF:" + dropOff;
+
+    document.getElementById('dataFive').innerHTML = "PICK UP :" + pickup;
+
+    document.getElementById('number').innerHTML = noUrut;
+
+
+    const button = document.querySelector(".btn");
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.print();
+    });</script>
+</body>
+
+</html>

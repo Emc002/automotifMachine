@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUIZ SIGN UP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nama</label>
+      <input type="name" class="form-control" id="nama" aria-describedby="emailHelp" placeholder="Masukkan Nama">
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Umur</label>
+      <input type="number" class="form-control" id="umur" aria-describedby="emailHelp" placeholder="Masukan Umur">
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Username</label>
+      <input type="name" class="form-control" id="username" aria-describedby="emailHelp"
+        placeholder="Masukan Username">
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Masukan email">
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Masukkan Password">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <a href="#" class="btn btn-info btn-success" onclick="signUp()" role="button">Submit</a>
+  </form>
+
+  <script>
+    var orang = [];
+    function orang(nama, umur, username, email, password) {
+      this.nama = nama;
+      this.umur = umur;
+      this.username1 = username;
+      this.email = email;
+      this.password1 = password;
+    }
+    function signUp() {
+
+      var orang = new orang(
+        document.getElementById("nama").value,
+      document.getElementById("umur").value,
+      document.getElementById("username").value,
+      document.getElementById("email").value,
+      document.getElementById("password").value);
+          
+      orang.push(orang);
+    }
+    </script>
+
+
+</body>
+
+</html>

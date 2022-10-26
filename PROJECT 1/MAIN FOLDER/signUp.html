@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ign up and Sign In</title>
+  <link rel="stylesheet" href="CSS/signUpSignin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+</head>
+
+<body>
+
+
+  <div class="container">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci dignissimos voluptate earum exercitationem?
+    Voluptatum delectus ea eaque! Maiores sequi sunt eum atque, tempora vero obcaecati, omnis consectetur dolore, rerum
+    consequatur odio debitis praesentium rem neque inventore dicta voluptas? Officia, quas, rem reiciendis est fugiat
+    corporis iure sapiente ex, aliquid voluptate sint mollitia deleniti aut expedita! Adipisci at, aliquid, ipsam quam
+    obcaecati distinctio consequatur corrupti eaque itaque odit nemo inventore unde sequi ipsum asperiores? Provident
+    fuga neque asperiores vero, aperiam, ipsum ipsam sunt veniam corporis possimus iusto necessitatibus laborum, dicta
+    veritatis? Magnam et fugiat enim, quo quae voluptatem voluptatibus architecto. Doloribus.
+    
+    
+    
+    <div class="forms-container">
+      <div class="signin-signup">
+
+        <form action="#" class="sign-in-form">
+          <h2 class="title">Sign in</h2>
+
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" name="username1">
+          </div>
+
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" name="password1">
+          </div>
+          <input type="submit" class="btn solid" value="Login">
+
+
+        </form>
+
+
+
+
+        <div class="signup-signup">
+
+          <form action="#" class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" name="username">
+            </div>
+
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" name="email">
+            </div>
+
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" name="password">
+
+            </div>
+
+            <input type="submit" class="btn solid" value="Login">
+
+
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content" style="color: black;">
+          <h3>New Here?</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, molestiae quisquam! Dignissimos est ullam
+            laboriosam.</p>
+          <button class="btn transparent" id="sign-up-button">Sign Up</button>
+        </div>
+        <img src="GAMBAR/Sign in/cars1.svg" class="image" />
+      </div>
+
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>one of us</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, molestiae quisquam! Dignissimos est ullam
+            laboriosam.</p>
+          <button class="btn transparent" id="sign-in-button">Sign In</button>
+        </div>
+        <img src="GAMBAR/Sign in/cars2.svg" class="image" />
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+  <script src="JS/signUpSignIn.js"></script>
+  <script>
+
+
+    const userBaru = document.querySelector('.sign-up-form');
+    document.querySelector('.sign-up-form').reset();
+    userBaru.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(userBaru);
+      const obj = Object.fromEntries(fd);
+      const json = JSON.stringify(obj);
+      localStorage.setItem('form', json);
+      window.location.reload();
+    })
+
+
+    const json = localStorage.getItem('form');
+    const obj = JSON.parse(json);
+
+    const user = document.querySelector('.sign-in-form');
+    user.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd1 = new FormData(user);
+      const obj1 = Object.fromEntries(fd1);
+
+      let data1 = obj['username'];
+      let data2 = obj['password'];
+
+      let data3 = obj1['username1'];
+      let data4 = obj1['password1'];
+
+      if (data1 === data3 && data2 === data4) {
+        location.href = "MAINHOME.html";
+      }
+    })
+
+
+
+  </script>
+</body>
+
+</html>
